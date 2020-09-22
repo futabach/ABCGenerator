@@ -1,0 +1,69 @@
+<html lang="ja">
+<head>
+<title>ABCプレース生成(easy as ABC Generator)</title>
+<meta charset="UTF-8" name="viewport" content="width=device-width">
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<BR>
+<h4>ABCプレースの自動生成プログラムです。</h4>
+	<ul>
+		<li>ソース</li>
+		<a href="ABCPlace.java">
+		ABCPlace.java
+		</a>
+	</ul>
+<h4>使い方</h4>
+	<ul>
+		<li>ABCPlace makeQuiz(int GAME_TYPE,int GAME_SIZE, int GAME_COLOR)</li>
+		パネルのタイプ、サイズ、色数を指定して解答が一意なクイズを生成します。
+		<ol>
+		<li>GAME_TYPE</li>
+			3,4,6角形のいずれかを指定。
+		<li>GAME_SIZE</li>
+			クイズの横幅を指定。<BR>
+		<li>GAME_COLOR</li>
+			一列に並ぶ色の数を指定。
+		</ol>
+		(例)<BR>
+		GAME_TYPE=4,GAME_SIZE=8,GAME_COLOR=3の場合<BR>
+		<img border="0" src="img/483.jpg"><BR>
+		GAME_TYPE=3,GAME_SIZE=8,GAME_COLOR=3の場合<BR>
+		<img border="0" src="img/383.jpg"><BR>
+		GAME_TYPE=6,GAME_SIZE=9,GAME_COLOR=3の場合<BR>
+		<img border="0" src="img/693.jpg"><BR>
+		
+		<BR>
+		<li>boolean makeMoreDifficult()</li>
+		作成済みのクイズを元に、解答の一意性を損なわないヒントを削り取り、より難易度の高いクイズを作成します。
+		<BR>
+		（既に最難のクイズになっている場合はfalseを返します）
+		<BR>
+		<img border="0" src="img/more.jpg"><BR>
+		<BR>
+		<li>int isUniqueAnswer()</li>
+		答えの一意性を確認します。<BR>
+		return 0:解無し , 1:一意の解 , 2:複数解あり
+		<BR>
+		<BR>
+		<li>ABCPlace makeFirstAnswer()</li>
+		1つ目の答えを取得します（答えが存在しない場合はnull）<BR>
+		<BR>
+		<li>データ形式</li>
+		<ol>
+		<li>int[][] map</li>
+			bit配列で解答パターンが出力されます。<BR>
+		<img border="0" src="img/mapdata.jpg"><BR>
+		<BR>
+		<li>int[][][] hintmap</li>
+			クイズのヒント部分が出力されます。<BR>
+			ヒントが入らない枠は-1、それ以外はヒントの色番号が入ります。<BR>
+		<BR>
+		<BR>
+		<BR>
+		</ol>
+		<BR>
+		<BR>
+	</ul>
+</body>
+</html>
